@@ -1,0 +1,46 @@
+{{> navbar}}
+<div class="container mt-3">
+  <div divdiv class="card border-danger mb-3" style="max-width: 70rem;">
+  <h1>
+    {{#if id}}
+      Actualizando peticion "{{title}}" ({{id}})
+    {{else}}
+      Selecciona tu pokemon inicial
+    {{/if}}
+  </h1>
+   <h5>Danos una descripcion de ti como entrenador</h5>
+  <hr>
+  <form action="/articles/{{#if id}}{{id}}/update{{else}}create{{/if}}" method="POST">
+  <label for="title" class="form-label"><h5>Selecciona una nuevamente a tu pokemon</h5></label>
+    <div class="radio-item">
+      <input type="radio" class="form-check-input" name="title" value="Elegiste a Charmander y se llama" required>
+      Charmander
+      <br>
+      <input type="radio" class="form-check-input" name="title" value="Elegiste a Bulbasaur y se llama" required>
+      Bulbasaur
+      <br>
+      <input type="radio" class="form-check-input" name="title" value="Elegiste a Squirtle y se llama" required>
+      Squirtle
+      <br>
+    </div>
+  <hr>
+  <!--
+    Este formulario se usará tanto para edición como creación, este if nos dice que si viene un id, entonces será un update, si no, será un create.
+    Para el action, si viene un id será un post a /articles/:id/update, si no, será un post a /articles/create.
+  -->
+   <div class="mb-3">
+      <label for="title" class="form-label">Dale nombre a tu pokemon</label>
+      <input type="text" class="form-control" name="title" aria-describedby="titleHelp" required="true" value="{{title}}">
+      <div id="titleHelp" class="form-text">Tu eleccion es libre!</div>
+    </div>
+    <div class="mb-3">
+      <label for="content" class="form-label">Danos tu descrpcion de entrenador y por que escogiste ese pokemon</label>
+      <textarea class="form-control" name="content" rows="3" aria-describedby="contentHelp">{{content}}</textarea>
+      <div id="contentHelp" class="form-text">Queremos conocerte</div>
+    </div>
+    <div class="mb-3">
+      <button type="submit" class="btn btn-danger" style="background-color: #ff3a3a;">Enviar eleccion</button>
+    </div>
+ </form>
+</div>
+</div>

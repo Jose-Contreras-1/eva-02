@@ -1,0 +1,73 @@
+{{> navbar}}
+<div class="container mt-3">
+  
+<div class="card border-danger mb-3" style="max-width: 70rem;">
+  <header class="my-3">
+    <h1>Bienvenido a Blackat Selector</h1>
+    <h4>Donde puedes elegir a tu pokemon inicial!</h4>
+    <p>
+      Bienvenido entrenador, aqui podras elegir a tu pokemon inicial y dar tu descripcion de entrenador, elige sabiamente, suerte!!
+    </p>
+    <a href="/about">Quienes son Blackat Selector? . . .</a>
+    <hr>
+  </header>
+  <div class="card border-danger mb-3" style="max-width: 150rem;">
+  <header class="my-3">
+    <div class="row row-cols-1 row-cols-md-3 mb-3 d-flex justify-content-center">
+      <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 mb-3">
+        <div class="card mb-4 rounded-3 shadow-sm">
+       <div class="card-header py-3">
+            <h4 class="my-0 fw-strong">Charmander</h4>
+          </div>
+        <div class="card-body">
+          <div class="card-img">
+            <a href="articles/create">
+            <img class="img-thumbnail" src="/img/charmander.png" alt="Charmander">
+            </a>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 mb-3">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-strong">Bulbasaur</h4>
+          </div>
+        <div class="card-body">
+          <div class="card-img">
+            <a href="articles/create">
+            <img class="img-thumbnail" src="/img/bulbasaur.png" alt="Bulbasaur">
+            </a>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-3 mb-3">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-strong">Squirtle</h4>
+          </div>
+        <div class="card-body">
+          <div class="card-img">
+            <a href="articles/create">
+            <img class="img-thumbnail" src="/img/squirtle.png" alt="Squirtle">
+            </a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    </div>
+  </header>
+  <hr>
+  <h3 class="mt-5 mb-3">Últimos entrenador en seleccion su pokemon inicial. . .</h3>
+  {{#each articles}}
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">{{this.title}}</h5>
+        <p class="card-text">{{this.content}}</p>
+        <a href="/articles/{{this.id}}" class="btn btn-primary btn-sm" style="background-color: #ff2d2d;">informacion de entrenador</a>
+      </div>
+    </div>
+  {{/each}}
+</div>

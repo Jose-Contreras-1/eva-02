@@ -19,7 +19,8 @@
     "hbs": "^4.2.0",
     "heroku": "^7.60.1",
     "morgan": "^1.10.0",
-    "mysql2": "^2.3.3"
+    "mysql2": "^2.3.3",
+    "ubuntu": "^2.0.0"
   },
   "devDependencies": {
     "eslint": "^8.11.0",
